@@ -1,25 +1,20 @@
-import os
 import configparser
-from selenium import webdriver
-from selenium.webdriver.common.by import By
+import os
 from datetime import datetime, timedelta
 
-class MainBot():
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+
+class MainBot:
 
     def __init__(self):
         self.initSelenium()
 
     def initSelenium(self):
+
         # Read the path to the ChromeDriver executable from an environment variable
-        chrome_driver_path = os.environ['CHROME_DRIVER_PATH']
-
-        # Set options to start the browser in headless mode
-        options = webdriver.ChromeOptions()
-        # options.add_argument('--headless')
-
-        # Create a webdriver instance
-        self.driver = webdriver.Chrome(executable_path=chrome_driver_path, options=options)
-        driver = self.driver
+        driver_path = os.environ['CHROME_DRIVER_PATH']
 
         # Read the URL and form element IDs from a configuration file
         configFile = configparser.ConfigParser()
@@ -27,6 +22,15 @@ class MainBot():
 
         self.config = configFile['DEFAULT']
         config = self.config
+
+        # Set options to start the browser in headless mode
+        options = webdriver.ChromeOptions()
+        # options.add_argument('--headless')
+
+        # Create a webdriver instance
+        self.driver = webdriver.Chrome(executable_path=driver_path, options=options)
+        driver = self.driver
+
         homeurl = config['HOME_URL']
         shutdown_url = config['SHUTDOWNMENU_URL']
 
@@ -53,6 +57,7 @@ class MainBot():
         ADD_button = driver.find_element(By.XPATH, '//button[text()="ADD"]')
         ADD_button.click()
 
+        self.driver.minimize_window()
 
     def check_restore_option(self, restore_hours):
         driver = self.driver
@@ -63,22 +68,19 @@ class MainBot():
                                                    '//div[contains(text(), "Restore")]/following-sibling::div/p-checkbox/div')
             restore_checkbox.click()
         else:
-            
+
             self.set_restore_date()
             self.click_outside()
             self.set_restore_time(restore_hours)
-            
 
             print("cenas")
 
-
         self.confirm_scheduling()
-
 
     def set_restore_date(self):
 
         restore_date_input = self.driver.find_element(By.XPATH,
-                                                   '//div[contains(text(), "Restore Date")]/following-sibling::div/p-calendar/span/input')
+                                                      '//div[contains(text(), "Restore Date")]/following-sibling::div/p-calendar/span/input')
         restore_date_input.clear()
         # Get the current date and add one day to it
 
@@ -87,7 +89,7 @@ class MainBot():
         # Get the lower and upper bounds as datetime objects
         lower_bound = datetime.strptime('12:00', '%H:%M')
         upper_bound = datetime.strptime('23:59', '%H:%M')
-        
+
         if lower_bound.time() <= datetime.now().time() <= upper_bound.time():
             restore_date += timedelta(days=1)
 
@@ -99,10 +101,10 @@ class MainBot():
     def set_restore_time(self, chosen_time):
 
         restore_time_input = self.driver.find_element(By.XPATH,
-                                                   '//div[contains(text(), "Restore Time")]/following-sibling::div/p-calendar/span/input')
-                                                   
+                                                      '//div[contains(text(), "Restore Time")]/following-sibling::div/p-calendar/span/input')
+
         restore_time_input.click()
-        
+
         time = datetime.strptime(chosen_time, '%H:%M')
 
         time_string = time.strftime('%H:%M')
@@ -113,21 +115,19 @@ class MainBot():
         self.driver.execute_script('arguments[0].value = ""', restore_time_input)
 
         restore_time_input.send_keys(time_string)
-        
-        
-        
+
     def click_outside(self):
 
         clear_space = self.driver.find_element(By.XPATH,
-                                                   '//div[contains(text(), "Restore Time")]')
-                                                   
+                                               '//div[contains(text(), "Restore Time")]')
+
         clear_space.click()
 
     def confirm_scheduling(self):
         driver = self.driver
 
         ok_button = driver.find_element(By.XPATH, '//button[text()="OK"]')
-        #ok_button.click()
+        ok_button.click()
 
         # Close the browser
-        #driver.quit()
+        driver.quit()

@@ -1,7 +1,10 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QDateTimeEdit, QLabel
+
 from PyQt5.QtCore import QTime
+from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QDateTimeEdit, QLabel
+
 from scraper import MainBot
+
 
 class MainWindow(QWidget):
     def __init__(self):
@@ -38,7 +41,7 @@ class MainWindow(QWidget):
 
     def on_submit_button_clicked(self):
         self.bot.check_restore_option(self.time_input.text())
-        
+
         QApplication.quit()
 
 

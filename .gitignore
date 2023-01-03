@@ -1,3 +1,5 @@
 /.fleet
 /config.ini
 /__pycache__
+/build
+/dist
