@@ -1,6 +1,6 @@
 # Cyberpower UPS Shutdown
 
-Welcome to Cyberpower UPS Shutdown, a tool to help users immediately shutdown their Cyberpower UPS and computer and give the option to shedule (or not) the restore time the UPS. 
+Welcome to Cyberpower UPS Shutdown, a tool to help users immediately shutdown their Cyberpower UPS and computer and give the option to shedule (or not) the restore time of the UPS. 
 With this app, you can avoid the need to set fixed restore times for each day of the week and you can decide the restore time in the moment that you want to turn off the computer.
 
 ## How to Use
