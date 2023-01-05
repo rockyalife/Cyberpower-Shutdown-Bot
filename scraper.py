@@ -43,8 +43,6 @@ class MainBot:
         username_field = driver.find_element(By.ID, "username")
         username_field.send_keys(config['USERNAME'])
 
-        driver.implicitly_wait(10)
-
         pass_field = driver.find_element(By.ID, "password")
         pass_field.send_keys(config['PASSWORD'])
 
