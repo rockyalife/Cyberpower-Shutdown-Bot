@@ -1,0 +1,45 @@
+1672884131436	geckodriver	INFO	Listening on 127.0.0.1:50333
+1672884173654	geckodriver	INFO	Listening on 127.0.0.1:50358
+1672884208136	geckodriver	INFO	Listening on 127.0.0.1:50378
+1672884378950	geckodriver	INFO	Listening on 127.0.0.1:50460
+1672884404485	geckodriver	INFO	Listening on 127.0.0.1:50474
+1672884496213	geckodriver	INFO	Listening on 127.0.0.1:50498
+1672884525399	geckodriver	INFO	Listening on 127.0.0.1:50513
+1672884528436	mozrunner::runner	INFO	Running command: "C:\\\\Program Files\\\\Mozilla Firefox\\\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\gonga\\AppData\\Local\\Temp\\rust_mozprofile0N0xc3"
+1672884528965	Marionette	INFO	Marionette enabled
+1672884528971	Marionette	INFO	Listening on port 50526
+Read port: 50526
+1672884529081	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\gonga\\AppData\\Local\\Temp\\rust_mozprofile0N0xc3\\search.json.mozlz4", (void 0)))
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:3052."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:3052."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:3052."
+1672884622110	Marionette	INFO	Stopped listening on port 50526
+[Parent 18136, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:746
+1672885098727	geckodriver	INFO	Listening on 127.0.0.1:51001
+1672885101769	mozrunner::runner	INFO	Running command: "C:\\\\Program Files\\\\Mozilla Firefox\\\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\gonga\\AppData\\Local\\Temp\\rust_mozprofileUneF7O"
+1672885102071	Marionette	INFO	Marionette enabled
+1672885102077	Marionette	INFO	Listening on port 51014
+Read port: 51014
+1672885102390	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\gonga\\AppData\\Local\\Temp\\rust_mozprofileUneF7O\\search.json.mozlz4", (void 0)))
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:3052."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:3052."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:3052."
+1672885109745	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+1672885110248	Marionette	INFO	Stopped listening on port 51014
+1672885207077	geckodriver	INFO	Listening on 127.0.0.1:51060
+1672885210101	mozrunner::runner	INFO	Running command: "C:\\\\Program Files\\\\Mozilla Firefox\\\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\gonga\\AppData\\Local\\Temp\\rust_mozprofilevLNSAp"
+1672885210398	Marionette	INFO	Marionette enabled
+1672885210403	Marionette	INFO	Listening on port 51075
+Read port: 51075
+1672885210716	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\gonga\\AppData\\Local\\Temp\\rust_mozprofilevLNSAp\\search.json.mozlz4", (void 0)))
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:3052."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:3052."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:3052."
+1672885221225	Marionette	INFO	Stopped listening on port 51075

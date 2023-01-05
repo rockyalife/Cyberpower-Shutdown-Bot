@@ -37,9 +37,13 @@ class MainBot:
         # Navigate to the webpage
         driver.get(homeurl)
 
+        driver.implicitly_wait(10)
+
         # Find the form elements and fill in the form
         username_field = driver.find_element(By.ID, "username")
         username_field.send_keys(config['USERNAME'])
+
+        driver.implicitly_wait(10)
 
         pass_field = driver.find_element(By.ID, "password")
         pass_field.send_keys(config['PASSWORD'])
@@ -81,7 +85,6 @@ class MainBot:
 
         restore_date_input = self.driver.find_element(By.XPATH,
                                                       '//div[contains(text(), "Restore Date")]/following-sibling::div/p-calendar/span/input')
-        restore_date_input.clear()
         # Get the current date and add one day to it
 
         restore_date = datetime.today()
@@ -95,6 +98,9 @@ class MainBot:
 
         # Format the date as a string in the DD/MM/YYYY format
         date_string = restore_date.strftime('%m/%d/%Y')
+
+        # Clear the input field ( clear function wasn't working)
+        self.driver.execute_script('arguments[0].value = ""', restore_date_input)
 
         restore_date_input.send_keys(date_string)
 
