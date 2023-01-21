@@ -5,6 +5,7 @@ from datetime import datetime, timedelta
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
+import time
 
 class MainBot:
 
@@ -39,6 +40,8 @@ class MainBot:
 
         driver.implicitly_wait(10)
 
+        time.sleep(2)
+
         # Find the form elements and fill in the form
         username_field = driver.find_element(By.ID, "username")
         username_field.send_keys(config['USERNAME'])
@@ -52,6 +55,7 @@ class MainBot:
 
         # Wait for the form to be submitted
         driver.implicitly_wait(10)
+        time.sleep(2)
 
         # Go to Schedule Shutdown page
         driver.get(shutdown_url)
