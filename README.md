@@ -35,6 +35,7 @@ To run the app, simply execute the `mainGUI.py` file using Python. The GUI will 
 
 ## Future Optimizations
 
+- Improve stability
 - Add error handling for cases where the Powerpanel Business web interface is not available or the login credentials are incorrect.
 - Attempt to make it work with the headless version of the webdriver
 - Add additional features to the GUI, such as a checkbox to decide if you want to set a restore time for the UPS or not.
